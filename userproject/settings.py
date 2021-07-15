@@ -131,7 +131,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Added manually
 # If some one hits /static url of our project then they can able to see the contents inside the static folder
 
-STATICFILES_DIRS = [
+""" STATICFILES_DIRS = [
     BASE_DIR / "static",
     '/var/www/static/',
+    os.path.join(BASE_DIR, 'static')
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') """
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
